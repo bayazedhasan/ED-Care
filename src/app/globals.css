@@ -25,3 +25,10 @@ body {
 .pc{
   color: #162726;
 }
+.p{
+  color: #757978;
+  font-size: 14px;
+  font-weight: semibold;
+  line-height: 2;
+  width: 550px;
+}

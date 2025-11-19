@@ -1,0 +1,14 @@
+ [
+  { "title": "Business Management", "icon": "https://i.postimg.cc/0yVPZPKs/category-1.png" },
+  { "title": "Arts Design", "icon": "https://i.postimg.cc/nLMZPgBg/category-2.png" },
+  { "title": "Personal Development", "icon": "https://i.postimg.cc/x16ngnNn/category-3.png" },
+  { "title": "Health & Fitnes", "icon": "https://i.postimg.cc/TPhG4FgS/category-4.png" },
+  { "title": "Marketing", "icon": "https://i.postimg.cc/Bnm4N4PJ/category-5.png" },
+  { "title": "Business & Finance", "icon": "https://i.postimg.cc/0NrxBFDL/category-6.png" },
+  { "title": "Computer Science", "icon": "https://i.postimg.cc/FK1mB80t/category-7.png" },
+  { "title": "Video & Photography", "icon": "https://i.postimg.cc/TPhG4FgS/category-4.png" },
+  { "title": "Data Science", "icon": "https://i.postimg.cc/nLMZPgBg/category-2.png" },
+  { "title": "IT Startup Agency", "icon": "https://i.postimg.cc/0yVPZPKs/category-1.png" },
+  { "title": "Software Comopany", "icon": "https://i.postimg.cc/Bnm4N4PJ/category-5.png" },
+  { "title": "High-Tech Company", "icon": "https://i.postimg.cc/FK1mB80t/category-7.png" }
+]

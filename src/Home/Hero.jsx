@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <div className="bg-[#E2EDF4] h-200 pt-30">
+        <div className="bg-[#E2EDF4] h-185 pt-25">
             <div className='container mx-auto px-28'>
                 <div className='flex items-center justify-between'>
 
@@ -36,7 +36,8 @@ const Hero = () => {
                             </div>
 
                             <div className='flex items-center gap-3'>
-                                <div className='border rounded-full p-4 w-12 bg-white border-none'>
+                                <div className='border rounded-full cursor-pointer p-4 w-12 bg-white border-none'>
+                                   
                                     <IoPlay color='#07A698' />
                                 </div>
                                 <p className='pc'>Watch the video</p>
@@ -82,7 +83,7 @@ const Hero = () => {
 
                         <motion.div
                             className='absolute top-75 right-90 border p-6 rounded-xl w-50 bg-white border-none'
-                            animate={{ y: [0, -20, 0] }}
+                            animate={{ x: [0, -20, 0] }}
                             transition={{
                                 duration: 3,
                                 repeat: Infinity,
