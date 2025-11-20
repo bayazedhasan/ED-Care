@@ -7,6 +7,8 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 const Learn = () => {
     const { data } = useData()
 
+    
+
     return (
         <div className='bg-[#F2F4F7] h-150 py-25'>
             <div className='container mx-auto px-28'>
@@ -37,6 +39,7 @@ const Learn = () => {
                         }
                     </div>
                 </div>
+                
             </div>
         </div>
     );

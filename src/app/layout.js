@@ -5,6 +5,8 @@ import Footer from "@/Components/Shared/Footer";
 
 import { Varta } from 'next/font/google';
 
+
+
 const varta = Varta({
     weight: ['700'],
     subsets: ['latin'],
@@ -18,13 +20,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body
-        className={`${varta.variable} ${varta.variable} antialiased`}
+        className={`${varta.variable} antialiased`}
       >
-        <Header></Header>
+      
+          <Header></Header>
         {children}
         <Footer></Footer>
+        
       </body>
     </html>
   );
