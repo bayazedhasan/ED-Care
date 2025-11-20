@@ -75,11 +75,8 @@ const Hero = () => {
                     </div>
 
 
-                    <div className='relative' style={{
-                        backgroundImage: "url('/assets/hero-shape-3.png')",
-                    }}>
+                    <div className='relative'>
                         <img className='rounded-[90px]' src="/assets/hero-img-1.png" alt="" />
-
 
                         <motion.div
                             className='absolute top-75 right-90 border p-6 rounded-xl w-50 bg-white border-none'

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { FaPhone} from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
@@ -12,48 +13,59 @@ import { FaYoutube } from "react-icons/fa";
 const TopHeader = () => {
     return (
         <div className='bg-[#1F2C30]'>
-            <div className='flex justify-between container  mx-auto px-28'>
-                <div className='flex items-center gap-3 '>
-                <div className='flex gap-1 items-center  text-[#FFFFFF]'>
-                    <FaPhone />
-                    <p className="hover:text-[#39B8AD] duration-300 cursor-pointer">+880 1791971760</p>
-                </div>
-                <h1 className='border border-gray-700 h-13'></h1>
-                <div  className='flex gap-1 items-center text-[#FFFFFF]'>
-                    <CiLocationOn />
-                    <p>258 Helano Street, New York</p>
-                </div>
-                <h1 className='border border-gray-700 h-13'></h1>
-                <div  className='flex gap-1 items-center text-[#FFFFFF]'>
-                    <MdWatchLater />
-                    <p>Mon - Sat: 8:00 - 15:00</p>
-                </div>
-            </div>
-            <div className='flex items-center gap-3'>
-                <div className='flex items-center gap-1 text-[#FFFFFF] '>
-                    <FaRegUser />
-                    <h1 className='hover:text-[#39B8AD] duration-300 cursor-pointer'>Login/Register</h1>
-                </div>
-                <h1 className='border h-13 border-gray-700'></h1>
-                <div className='flex gap-3 items-center text-[#FFFFDE]'>
-                    <p className='text-md '>Follow Us</p>
-                    <div className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
-                        <FaFacebookF />
+            <div className='flex justify-between container mx-auto px-5 lg:px-28 py-2'>
+
+                
+                <div className='flex items-center gap-3 text-sm lg:text-base'>
+
+                    
+                    <div className='flex gap-1 items-center text-white'>
+                        <FaPhone className='text-xs lg:text-base' />
+                        <p className="hover:text-[#39B8AD] duration-300 cursor-pointer">
+                            +880 1791971760
+                        </p>
                     </div>
-                    <div className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
-                        <FaInstagram />
+
+                    
+                    <h1 className='border border-gray-700 h-13 hidden lg:block'></h1>
+
+                    <div className='flex gap-1 items-center text-white hidden lg:flex'>
+                        <CiLocationOn />
+                        <p>258 Helano Street, New York</p>
                     </div>
-                    <div className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
-                        <FaBehance />
-                    </div>
-                    <div className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
-                        <FaSkype />
-                    </div>
-                    <div className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
-                        <FaYoutube />
+
+                    <h1 className='border border-gray-700 h-13 hidden lg:block'></h1>
+
+                    <div className='flex gap-1 items-center text-white hidden lg:flex'>
+                        <MdWatchLater />
+                        <p>Mon - Sat: 8:00 - 15:00</p>
                     </div>
                 </div>
-            </div>
+
+                
+                <div className='flex items-center gap-3 text-sm lg:text-base'>
+                    <div className='flex items-center gap-1 text-white'>
+                        <FaRegUser className='text-xs lg:text-base' />
+                        <h1 className='hover:text-[#39B8AD] duration-300 cursor-pointer'>
+                            Login/Register
+                        </h1>
+                    </div>
+
+                    
+                    <h1 className='border h-13 border-gray-700 hidden lg:block'></h1>
+
+                   
+                    <div className='flex gap-3 items-center text-[#FFFFDE] hidden lg:flex text-base'>
+                        <p className='text-md'>Follow Us</p>
+
+                        <FaFacebookF className='hover:text-[#39B8AD] duration-300 cursor-pointer' />
+                        <FaInstagram className='hover:text-[#39B8AD] duration-300 cursor-pointer' />
+                        <FaBehance className='hover:text-[#39B8AD] duration-300 cursor-pointer' />
+                        <FaSkype className='hover:text-[#39B8AD] duration-300 cursor-pointer' />
+                        <FaYoutube className='hover:text-[#39B8AD] duration-300 cursor-pointer' />
+                    </div>
+                </div>
+
             </div>
         </div>
     );
