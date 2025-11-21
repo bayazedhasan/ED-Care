@@ -26,10 +26,44 @@ body {
 .pc{
   color: #162726;
 }
-.p{
+.p {
   color: #757978;
-  font-size: 14px;
-  font-weight: semibold;
+  font-weight: 600; 
   line-height: 2;
-  width: 550px;
+
+
+  width: 100%;       
+  max-width: 550px;  
+
+  font-size: 14px;   
+}
+
+@media (min-width: 640px) { 
+  .p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .p {
+    font-size: 15px;
+    width: 450px;
+  }
+}
+
+@media (min-width: 1024px) { 
+  .p {
+    font-size: 14px; 
+    width: 550px;    
+    text-align: left; 
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
