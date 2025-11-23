@@ -30,8 +30,14 @@ const useData = () => {
             .then(res => res.json())
             .then(data => setBest(data));
     }, []);
+    const [books, setBooks] = useState([]);
+    useEffect(() => {
+        fetch("/bookData.json")
+            .then(res => res.json())
+            .then(data => setBooks(data));
+    }, []);
 
-    return { data, btn, cards, best };
+    return { data, btn, cards, best, books};
 };
 
 export default useData;

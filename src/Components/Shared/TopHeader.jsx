@@ -13,7 +13,7 @@ import { FaYoutube } from "react-icons/fa";
 const TopHeader = () => {
     return (
         <div className='bg-[#1F2C30]'>
-            <div className='flex justify-between container mx-auto px-5 lg:px-28 py-2'>
+            <div className='flex justify-between container mx-auto px-5 lg:px-28'>
 
                 
                 <div className='flex items-center gap-3 text-sm lg:text-base'>
