@@ -51,7 +51,6 @@ const Header = () => {
             <Link href={"/"}><p className='font-bold'>HOME</p></Link>
             <Link href={"/courses"}><p className='font-bold hover:text-[#07A698] duration-300'>COURSES</p></Link>
             <Link href={"/shop"}><p className='font-bold hover:text-[#07A698] duration-300'>SHOP</p></Link>
-            <Link href={"/pages"}><p className='font-bold hover:text-[#07A698] duration-300'>PAGES</p></Link>
             <Link href={"/blog"}><p className='font-bold hover:text-[#07A698] duration-300'>BLOG</p></Link>
             <Link href={"/contact"}><p className='font-bold hover:text-[#07A698] duration-300'>CONTACT</p></Link>
           </div>
