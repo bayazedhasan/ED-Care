@@ -57,7 +57,7 @@ const Header = () => {
         </div>
 
         
-        <div className="lg:hidden block">
+        <div className="lg:hidden  block">
           <div className='flex items-center justify-between px-4 py-3'>
             
             <button className='text-[#07A698] text-2xl'>
