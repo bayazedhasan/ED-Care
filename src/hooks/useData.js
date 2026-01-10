@@ -43,11 +43,8 @@ const useData = () => {
         .then(data=>setBlogs(data))
     },[])
 
-<<<<<<< HEAD
-    return { data, btn, blogs, cards, best, books};
-=======
-    return { data, btn, blogs, cardss, best, books};
->>>>>>> a1ae2fa (fist commit)
-};
 
+    return { data, btn, blogs, cardss, best, books};
+
+};
 export default useData;
