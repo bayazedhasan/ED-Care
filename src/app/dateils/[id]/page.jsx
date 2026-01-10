@@ -21,7 +21,7 @@ const page = () => {
     const { cardss } = useData();
     const dispatch = useDispatch();
 
-    const handleAddToCart = (cardss)=>{
+    const handleAddToCarts = (cardss)=>{
         dispatch(addToCart(cardss))
     }
     const findCards = cardss.find(c => c.id == id)
@@ -144,7 +144,7 @@ const page = () => {
                             </div>
                             <div onClick={(e)=>{
                                 e.stopPropagation();
-                                handleAddToCart(findCards)}} className='hidden lg:block border mt-4 text-center rounded-lg px-8 border-none cursor-pointer py-4 bg-[#07A698]'>
+                                handleAddToCarts(findCards)}} className='hidden lg:block border mt-4 text-center rounded-lg px-8 border-none cursor-pointer py-4 bg-[#07A698]'>
                                 <p className='text-white text-md font-semibold'>ADD TO CART</p>
                             </div>
                             <div className='hidden lg:block border mt-2 text-center rounded-lg px-8  cursor-pointer py-4 border-[#07A698] hover:bg-[#07A698]'>
