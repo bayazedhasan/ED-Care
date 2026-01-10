@@ -50,29 +50,6 @@ const Header = () => {
             </div>
           </div>
 
-<<<<<<< HEAD
-          <div>
-            <h1 className='border border-gray-200 h-15'></h1>
-          </div>
-
-         
-          <div className="flex items-center gap-10 text-[#162726]">
-            <Link href={"/"}><p className='font-bold'>HOME</p></Link>
-            <Link href={"/courses"}><p className='font-bold hover:text-[#07A698] duration-300'>COURSES</p></Link>
-            <Link href={"/shop"}><p className='font-bold hover:text-[#07A698] duration-300'>SHOP</p></Link>
-            <Link href={"/blog"}><p className='font-bold hover:text-[#07A698] duration-300'>BLOG</p></Link>
-            <Link href={"/contact"}><p className='font-bold hover:text-[#07A698] duration-300'>CONTACT</p></Link>
-          </div>
-        </div>
-
-        
-        <div className="lg:hidden  block">
-          <div className='flex items-center justify-between px-4 py-3'>
-            
-            <button className='text-[#07A698] text-2xl'>
-              <BsFillGridFill />
-            </button>
-=======
           {/* RIGHT SIDE → ONLY WHEN STICKY */}
           {sticky && (
             <div  className="relative cursor-pointer">
@@ -90,7 +67,6 @@ const Header = () => {
         <div className="lg:hidden block">
           <div className="flex items-center justify-between px-4 py-3">
             <BsFillGridFill className="text-[#07A698] text-2xl" />
->>>>>>> a1ae2fa (fist commit)
 
             <div className="flex items-center gap-4">
               {/* MOBILE CART → ONLY WHEN STICKY */}
