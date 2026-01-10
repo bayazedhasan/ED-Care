@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${varta.variable} bg-white antialiased`}
+        className={`${varta?.variable ?? ""} bg-white antialiased`}
       >
       <ReduxProvider>
         <Header></Header>
