@@ -1,9 +1,10 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Shared/Header";
 import Footer from "@/Components/Shared/Footer";
-
 import { Varta } from 'next/font/google';
+import ReduxProvider from "@/redux/ReduxProvider";
 
 
 
@@ -24,11 +25,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${varta.variable} bg-white antialiased`}
       >
-      
-          <Header></Header>
+      <ReduxProvider>
+        <Header></Header>
         {children}
         <Footer></Footer>
-        
+        </ReduxProvider>
       </body>
     </html>
   );

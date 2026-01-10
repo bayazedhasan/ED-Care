@@ -4,24 +4,25 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaAngleDown } from "react-icons/fa";
 import { CiGrid41 } from "react-icons/ci";
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const SecondHeader = () => {
     const [open, setOpen] = useState(false);
-
+    const carts = useSelector((state)=> state.cart.products);
     return (
         <div>
 
-            
+
             <div className='flex items-center justify-between container mx-auto px-5 lg:px-28 p-4'>
 
-                
+
                 <Link href={"/"}>
                     <div>
                         <img src="/assets/logo-1.png" alt="" className="w-28 lg:w-auto" />
                     </div>
                 </Link>
 
-                
+
                 <div className="hidden lg:block">
                     <div className="w-150">
                         <div className="flex items-center border border-[#BCE3C9] bg-[#F2F4F7] rounded-full p-1">
@@ -80,11 +81,11 @@ const SecondHeader = () => {
                     </div>
                 </div>
 
-                
+
                 <div>
                     <div className='flex items-center gap-3'>
 
-                        
+
                         <div className='text-[#6E7271] border rounded-full p-1 cursor-pointer'>
                             <img
                                 className='w-8'
@@ -93,12 +94,15 @@ const SecondHeader = () => {
                             />
                         </div>
 
-                        
-                        <div className='border rounded-full p-2 border-[#6E7271] cursor-pointer'>
+
+                        <div className='border relative rounded-full p-2 border-[#6E7271] cursor-pointer'>
                             <TiShoppingCart size={25} color='#6E7271' />
+                            <span className="absolute -top-1 -right-1 bg-[#07A698] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                                {carts.length}
+                            </span>
                         </div>
 
-                        
+
                         <div className='hidden lg:block border rounded-full px-8 border-none cursor-pointer py-3 bg-[#07A698]'>
                             <p className='text-white text-md font-semibold'>Start Free Trial</p>
                         </div>

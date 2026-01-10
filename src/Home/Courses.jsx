@@ -9,15 +9,15 @@ import { FaStar } from "react-icons/fa6";
 
 const Courses = () => {
     const { btn } = useData()
-    const { cards } = useData()
+    const { cardss } = useData()
     const [categoryId,setCategoryId] = useState()
     
     const handaleCategory = (name)=>{
         setCategoryId(name)
     }
     const filterProduct = !categoryId || categoryId === "All Categories" 
-    ? cards 
-    : cards.filter(c => c.category === categoryId);
+    ? cardss 
+    : cardss.filter(c => c.category === categoryId);
 
     return (
         <div className='bg-[#F2F4F7]'>

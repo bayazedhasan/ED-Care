@@ -14,10 +14,17 @@ import { GoTag } from "react-icons/go";
 import { TbWorld } from "react-icons/tb";
 import { FaSquarespace } from "react-icons/fa";
 import { IoShareSocial } from "react-icons/io5";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/redux/features/cart/cartSlice';
 const page = () => {
     const { id } = useParams();
-    const { cards } = useData();
-    const findCards = cards.find(c => c.id == id)
+    const { cardss } = useData();
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (cardss)=>{
+        dispatch(addToCart(cardss))
+    }
+    const findCards = cardss.find(c => c.id == id)
     return (
         <div>
             <div className="relative w-full h-96">
@@ -135,7 +142,9 @@ const page = () => {
                                 <p className='text-4xl font-bold pc'>${findCards?.price}</p>
                                 <p className='bg-[#07A698] py-0.5 text-white text-sm border w-18 border-none text-center rounded-full'>25% off</p>
                             </div>
-                            <div className='hidden lg:block border mt-4 text-center rounded-lg px-8 border-none cursor-pointer py-4 bg-[#07A698]'>
+                            <div onClick={(e)=>{
+                                e.stopPropagation();
+                                handleAddToCart(findCards)}} className='hidden lg:block border mt-4 text-center rounded-lg px-8 border-none cursor-pointer py-4 bg-[#07A698]'>
                                 <p className='text-white text-md font-semibold'>ADD TO CART</p>
                             </div>
                             <div className='hidden lg:block border mt-2 text-center rounded-lg px-8  cursor-pointer py-4 border-[#07A698] hover:bg-[#07A698]'>

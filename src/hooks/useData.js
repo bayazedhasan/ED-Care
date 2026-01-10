@@ -17,11 +17,11 @@ const useData = () => {
             .then(data => setBtn(data));
     }, []);
 
-    const [cards, setCards] = useState([]);
+    const [cardss, setCardss] = useState([]);
     useEffect(() => {
         fetch("/lessonCard.json")
             .then(res => res.json())
-            .then(data => setCards(data));
+            .then(data => setCardss(data));
     }, []);
 
     const [best, setBest] = useState([]);
@@ -43,7 +43,11 @@ const useData = () => {
         .then(data=>setBlogs(data))
     },[])
 
+<<<<<<< HEAD
     return { data, btn, blogs, cards, best, books};
+=======
+    return { data, btn, blogs, cardss, best, books};
+>>>>>>> a1ae2fa (fist commit)
 };
 
 export default useData;
