@@ -2,17 +2,19 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectCartItems, selectCartTotals, increaseQty, decreaseQty, removeFromCart } from "@/redux/features/cart/cartSlice";
 import { useRouter } from "next/navigation";
+import useData from "@/hooks/useData";
 const CartDrawer = ({ setIsCartOpen }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const totals = useSelector(selectCartTotals);
-
+  const { books } = useData();
   const router = useRouter();
-  
-const handleCheckout = () => {
-  setIsCartOpen(false); // close the cart drawer
-  router.push("/chackOutPage"); // navigate to checkout
-};
+
+  const handleCheckout = () => {
+
+    setIsCartOpen(false); // close the cart drawer
+    router.push("/chackOutPage"); // navigate to checkout
+  };
   return (
     <>
       {/* Overlay */}
@@ -23,7 +25,7 @@ const handleCheckout = () => {
 
       {/* Drawer */}
       <div className="fixed top-0 right-0 h-screen w-[90%] sm:w-[400px] bg-white z-50 shadow-xl flex flex-col">
-        
+
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-400">
           <h2 className="text-xl font-semibold">🛒 Cart ({totals.selectedItem})</h2>
@@ -49,7 +51,6 @@ const handleCheckout = () => {
                     <p className="text-gray-500">$ {item.price}</p>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-2">
                   <button onClick={() => dispatch(decreaseQty(item.id))} className="px-3 py-1 bg-gray-200 rounded">−</button>
                   <span>{item.quantity}</span>
@@ -78,9 +79,9 @@ const handleCheckout = () => {
             <span>$ {totals.grandTotal}</span>
           </div>
 
-         
+
           <button onClick={handleCheckout} className="w-full bg-[#07A698] text-white py-3 rounded">Checkout</button>
-            
+
         </div>
       </div>
     </>

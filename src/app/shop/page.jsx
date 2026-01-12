@@ -1,10 +1,19 @@
 "use client"
 import useData from '@/hooks/useData';
+import { addToCart } from '@/redux/features/cart/cartSlice';
 import React from 'react';
 import { FaStar } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { TiShoppingCart } from 'react-icons/ti';
+import { useDispatch } from 'react-redux';
 const page = () => {
-    const { books } = useData()
+    const { books } = useData();
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (card) => {
+        dispatch(addToCart(card));
+    }
     return (
         <div>
             <div className="relative w-full h-96">
@@ -51,15 +60,22 @@ const page = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-4 gap-6'>
+                <div className='grid grid-cols-4 gap-6 pt-5'>
                     {
                         books.map((b, inx) => (
                             <div key={inx} className='border bg-[#F2F4F7] rounded-lg border-gray-300'>
                                 <div className='flex relative flex-col items-center  justify-center pt-15 pb-8'>
                                     <img className='' src={b.image} alt="" />
+                                    <div
+                                    onClick={() => handleAddToCart(b)}
+                                    className=' absolute top-4 right-4 cursor-pointer'>
+                                        <TiShoppingCart size={25} />
+                                    </div>
                                     <div className=' absolute top-4 left-3'>
                                         <h1 className='text-[#07A698] border rounded-full px-4 py-0.5 bg-white border-gray-200'>{b.name}</h1>
+                                        
                                     </div>
+
                                 </div>
                                 <div className='p-6 bg-white'>
                                     <h1 className='pc text-xl font-bold'>{b.title}</h1>

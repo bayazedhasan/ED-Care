@@ -7,10 +7,18 @@ import { FaUser, FaEye } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import useData from '@/hooks/useData';
 import { BsFillLightningChargeFill } from "react-icons/bs";
+import { TiShoppingCart } from 'react-icons/ti';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/redux/features/cart/cartSlice';
 
 const page = () => {
     const { cardss = [] } = useData(); // ✅ default array
 
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (card) => {
+        dispatch(addToCart(card));
+    }
 
     return (
         <div>
@@ -72,9 +80,14 @@ const page = () => {
                     {cardss.slice(0, 9).map(c => (
                         <div
                             key={c.id}
-                            className='border rounded-xl border-gray-200 bg-[#FFFFFF] w-full p-5'
+                            className='border relative rounded-xl border-gray-200 bg-[#FFFFFF] w-full p-5'
                         >
                             <img className='rounded-xl w-full mb-3' src={c.img} alt="" />
+                            <div
+                            onClick={() => handleAddToCart(c)}
+                            className=' absolute top-8 right-8 cursor-pointer'>
+                                <TiShoppingCart size={30} color='#FFFFFF'/>
+                            </div>
 
                             <div className='p-3'>
                                 <p className='border rounded-full w-20 sm:w-24 text-center p-1 bg-[#E6F6F4] text-sm font-bold c'>
