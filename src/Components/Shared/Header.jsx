@@ -7,13 +7,16 @@ import { TiShoppingCart } from "react-icons/ti";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-
+import CartModal from "@/Home/CartModal";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [sticky, setSticky] = useState(false);
-  const carts = useSelector((state)=> state.cart.products);
-
+  const carts = useSelector((state) => state.cart.products);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const handleCartToggel = () => {
+    setIsCartOpen(!isCartOpen)
+  }
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 150);
@@ -52,7 +55,7 @@ const Header = () => {
 
           {/* RIGHT SIDE → ONLY WHEN STICKY */}
           {sticky && (
-            <div  className="relative cursor-pointer">
+            <div onClick={handleCartToggel} className="relative cursor-pointer">
               <div className='border rounded-full p-2 border-[#6E7271] cursor-pointer'>
                 <TiShoppingCart size={25} color='#6E7271' />
               </div>
@@ -71,7 +74,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               {/* MOBILE CART → ONLY WHEN STICKY */}
               {sticky && (
-                <div className="relative">
+                <div onClick={handleCartToggel} className="relative">
                   <div className='border rounded-full p-2 border-[#6E7271] cursor-pointer'>
                     <TiShoppingCart size={25} color='#6E7271' />
                   </div>
@@ -104,6 +107,9 @@ const Header = () => {
 
       {/* SPACE FOR FIXED HEADER */}
       {sticky && <div className="lg:mt-[66px] mt-[56px]"></div>}
+      {
+        isCartOpen && <CartModal setIsCartOpen={setIsCartOpen} />
+      }
     </div>
   );
 };

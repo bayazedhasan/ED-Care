@@ -5,10 +5,15 @@ import { FaAngleDown } from "react-icons/fa";
 import { CiGrid41 } from "react-icons/ci";
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import CartModal from '@/Home/CartModal';
 
 const SecondHeader = () => {
     const [open, setOpen] = useState(false);
-    const carts = useSelector((state)=> state.cart.products);
+    const carts = useSelector((state) => state.cart.products);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const handleCartToggel = () => {
+        setIsCartOpen(!isCartOpen)
+    }
     return (
         <div>
 
@@ -95,7 +100,7 @@ const SecondHeader = () => {
                         </div>
 
 
-                        <div className='border relative rounded-full p-2 border-[#6E7271] cursor-pointer'>
+                        <div onClick={handleCartToggel} className='border relative rounded-full p-2 border-[#6E7271] cursor-pointer'>
                             <TiShoppingCart size={25} color='#6E7271' />
                             <span className="absolute -top-1 -right-1 bg-[#07A698] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                 {carts.length}
@@ -113,6 +118,10 @@ const SecondHeader = () => {
             </div>
 
             <div className='border-b border-gray-200'></div>
+
+            {
+                isCartOpen && <CartModal setIsCartOpen={setIsCartOpen} />
+            }
         </div>
     );
 };
